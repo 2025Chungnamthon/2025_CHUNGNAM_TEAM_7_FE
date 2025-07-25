@@ -1,47 +1,72 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet, Alert } from 'react-native';
-import { BarCodeScanner, BarCodeScannerResult } from 'expo-barcode-scanner';
+import {
+  View,
+  StyleSheet,
+  Alert,
+  Platform,
+  PermissionsAndroid,
+} from 'react-native';
+import { RNCamera, BarCodeReadEvent } from 'react-native-camera';
+import { Button } from 'react-native/Libraries/Components/Button';
 
-type QRProps = {
-    navigation: any;
-};
+export default function QRScannerScreen({ navigation }: { navigation: any }) {
+  const [scanned, setScanned] = useState(false);
 
-export default function QRScannerScreen({ navigation }: QRProps) {
-    const [hasPermission, setHasPermission] = useState<boolean | null>(null);
-    const [scanned, setScanned] = useState(false);
-
-    useEffect(() => {
-        (async () => {
-            const { status } = await BarCodeScanner.requestPermissionsAsync();
-            setHasPermission(status === 'granted');
-        })();
-    }, []);
-
-    const handleBarCodeScanned = (result: BarCodeScannerResult) => {
-        setScanned(true);
-        const { data } = result;
-        Alert.alert('스캔된 데이터', data);
-    };
-
-    if (hasPermission === null) {
-        return <Text>카메라 권한 요청 중...</Text>;
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.CAMERA);
     }
-    if (hasPermission === false) {
-        return <Text>카메라 접근 권한이 없습니다.</Text>;
-    }
+  }, []);
 
-    return (
-        <View style={styles.container}>
-            <BarCodeScanner
-                onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                style={StyleSheet.absoluteFillObject}
-            />
-            {scanned && <Button title="다시 스캔" onPress={() => setScanned(false)} />}
-            <Button title="홈으로" onPress={() => navigation.navigate('Home')} />
+  const onBarCodeRead = (e: BarCodeReadEvent) => {
+    if (scanned) return;
+    setScanned(true);
+    Alert.alert('스캔된 데이터', e.data, [
+      { text: '확인', onPress: () => navigation.goBack() },
+    ]);
+  };
+
+  return (
+    <View style={styles.full}>
+      <RNCamera
+        style={styles.preview}
+        type={RNCamera.Constants.Type.back}
+        captureAudio={false}
+        onBarCodeRead={onBarCodeRead}
+        barCodeTypes={[RNCamera.Constants.BarCodeType.qr]}
+      >
+        {/* 사각 가이드 오버레이 */}
+        <View style={styles.overlay}>
+          <View style={styles.border} />
         </View>
-    );
+      </RNCamera>
+      {scanned && (
+        <View style={styles.scanAgain}>
+          <Button title="다시 스캔" onPress={() => setScanned(false)} />
+        </View>
+      )}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  full: { flex: 1, backgroundColor: '#000' },
+  preview: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  border: {
+    width: 250,
+    height: 250,
+    borderWidth: 2,
+    borderColor: '#fff',
+    borderRadius: 8,
+  },
+  scanAgain: {
+    position: 'absolute',
+    bottom: 40,
+    alignSelf: 'center',
+  },
 });

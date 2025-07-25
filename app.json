@@ -1,4 +1,11 @@
 {
   "name": "stemp_tour",
-  "displayName": "stemp_tour"
+  "displayName": "도장찍고가유",
+  "expo": {
+    "slug": "stemp_tour",
+    "version": "1.0.0",
+    "plugins": [
+      "expo-barcode-scanner"
+    ]
+  }
 }

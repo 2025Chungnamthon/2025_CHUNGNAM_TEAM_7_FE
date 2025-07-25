@@ -1,61 +1,74 @@
 import React from 'react';
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  Platform,
-} from 'react-native';
-import {
-  createBottomTabNavigator,
-  BottomTabBarProps,
-} from '@react-navigation/bottom-tabs';
+import { View, TouchableOpacity, StyleSheet, Platform, SafeAreaView, Text, TextInput, Button, } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/Ionicons';
-
-import HomeScreen from './screens/HomeScreen';
-import LoginScreen from './screens/LoginScreen';
-import SignupScreen from './screens/SignupScreen';
-import MapScreen from './screens/MapScreen';
-import GiftScreen from './screens/GiftScreen';
-import QRScannerScreen from './screens/QRScannerScreen';
-import ProfileScreen from './screens/ProfileScreen';
+import { createBottomTabNavigator, BottomTabBarProps, } from '@react-navigation/bottom-tabs';
 import { TabActions } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import HomeScreen from './screens/HomeScreen.tsx';
+import QRScannerScreen from './screens/QRScannerScreen.tsx';
+import GiftScreen from './screens/GiftScreen.tsx';
+import MapScreen from './screens/MapScreen.tsx';
+import ProfileScreen from './screens/ProfileScreen.tsx';
+import SignupStack from './screens/SignupStack.tsx';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function CustomTabBar({ state, navigation }: BottomTabBarProps) {
+const ICONS: Record<string, string> = {
+  Home: 'home-outline',
+  Search: 'search-outline',
+  QR: 'qr-code-outline',
+  Gift: 'gift-outline',
+  Profile: 'person-outline',
+};
+
+function LoginScreen({ navigation }: { navigation: any }) {
+  return (
+    <SafeAreaView style={styles.center}>
+      <Text style={styles.title}>Login</Text>
+      <TextInput style={styles.input} placeholder="Email" />
+      <TextInput style={styles.input} placeholder="Password" secureTextEntry />
+      <Button title="Login" onPress={() => navigation.navigate('Onb1')} />
+      <Text style={styles.link} onPress={() => navigation.navigate('Signup')}>
+        Don't have an account? Sign up
+      </Text>
+    </SafeAreaView>
+  );
+}
+
+const OnbScreen = ({ navigation, text, next, }: {
+  navigation: any;
+  text: string;
+  next: string;
+}) => (
+  <View style={styles.onb}>
+    <Text style={styles.onbText}>{text}</Text>
+    <Button title="다음" onPress={() => navigation.navigate(next)} />
+  </View>
+);
+
+function Onb4({ navigation }: { navigation: any }) {
+  return (
+    <View style={styles.onb}>
+      <Text style={styles.onbText}>‘도장찍고가유’ 시작!</Text>
+      <Button title="시작하기" onPress={() => navigation.navigate('MainTabs')} />
+    </View>
+  );
+}
+
+function CustomTabBar({ state, navigation, }: BottomTabBarProps & { navigation: any }) {
   return (
     <View style={styles.tabContainer}>
-      {state.routes.map((route, index) => {
-        const isFocused = state.index === index;
-
-        const iconName: string = {
-          Home: 'home-outline',
-          Search: 'search-outline',
-          QR: 'qr-code-outline',
-          Gift: 'gift-outline',
-          Profile: 'person-outline',
-        }[route.name] || 'help-outline';
-
-        const isCenter = route.name === 'QR';
-
-        const onPress = () => {
-          if (!isFocused) {
-            navigation.navigate(route.name);
-          }
-        };
-
+      {state.routes.map((r, i) => {
+        const focused = state.index === i;
+        const isCenter = r.name === 'QR';
         return (
-          <TouchableOpacity
-            key={route.key}
-            onPress={onPress}
-            style={isCenter ? styles.qrButton : styles.tabButton}
-          >
+          <TouchableOpacity key={r.key} onPress={() => !focused && navigation.dispatch(TabActions.jumpTo(r.name))}
+            style={[styles.tabButton, isCenter && styles.qrButton]}>
             <Icon
-              name={iconName}
+              name={ICONS[r.name] || 'help-outline'}
               size={isCenter ? 28 : 22}
-              color={isFocused ? '#00C853' : 'gray'}
+              color={focused ? '#00C853' : 'gray'}
             />
           </TouchableOpacity>
         );
@@ -67,7 +80,13 @@ function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 function MainTabs() {
   return (
     <Tab.Navigator
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: '#00C853',
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: { height: 70, backgroundColor: '#fff' },
+      }}
       tabBar={(props) => <CustomTabBar {...props} />}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
@@ -82,14 +101,54 @@ function MainTabs() {
 export default function AppNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {/* Auth */}
       <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Signup" component={SignupScreen} />
+      <Stack.Screen name="Signup" component={SignupStack} />
+
+      <Stack.Screen
+        name="Onb1"
+        component={(props: any) => (
+          <OnbScreen
+            {...props}
+            text="시장 곳곳의 QR을 스캔하고, 스탬프를 모아보세요!"
+            next="Onb2"
+          />
+        )}
+      />
+      <Stack.Screen
+        name="Onb2"
+        component={(props: any) => (
+          <OnbScreen
+            {...props}
+            text="적립한 스탬프로 상품권과 쿠폰을 교환해요!"
+            next="Onb3"
+          />
+        )}
+      />
+      <Stack.Screen
+        name="Onb3"
+        component={(props: any) => (
+          <OnbScreen
+            {...props}
+            text="방문 기록과 시장 트렌드를 한눈에 확인해요!"
+            next="Onb4"
+          />
+        )}
+      />
+      <Stack.Screen name="Onb4" component={Onb4} />
+
       <Stack.Screen name="MainTabs" component={MainTabs} />
     </Stack.Navigator>
   );
 }
 
 const styles = StyleSheet.create({
+  center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
+  title: { fontSize: 24, marginBottom: 16, textAlign: 'center' },
+  input: { width: '80%', borderWidth: 1, borderRadius: 8, padding: 10, marginBottom: 12 },
+  link: { color: 'blue', marginTop: 12 },
+  onb: { flex: 1, backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center', padding: 24 },
+  onbText: { fontSize: 18, textAlign: 'center', marginBottom: 24 },
   tabContainer: {
     flexDirection: 'row',
     height: 70,
@@ -100,19 +159,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingBottom: Platform.OS === 'ios' ? 20 : 10,
   },
-  tabButton: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
+  tabButton: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   qrButton: {
+    position: 'absolute',
+    bottom: Platform.OS === 'ios' ? 25 : 15,
     width: 60,
     height: 60,
     borderRadius: 30,
     backgroundColor: '#00C853',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 40,
-    zIndex: 999,
+    zIndex: 10,
   },
 });

@@ -9,7 +9,7 @@ export default function FloatingQRButton() {
         <View style={styles.container}>
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => navigation.navigate('QRScanner')}>
+                onPress={() => navigation.navigate('QRScannerScreen')}>
                 <FontAwesome name="qrcode" size={28} />
             </TouchableOpacity>
         </View>
