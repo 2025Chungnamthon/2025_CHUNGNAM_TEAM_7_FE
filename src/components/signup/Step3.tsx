@@ -1,6 +1,6 @@
 // src/screens/signup/Step3.tsx
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   SafeAreaView,
   View,
@@ -8,12 +8,47 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Alert,
 } from 'react-native';
+import { signupAndLogin } from '@/api/authService.ts';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Step3({ navigation }: { navigation: any }) {
   const [id, setId] = useState('');
+  const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
-  const [pw2, setPw2] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const onPressSignUp = useCallback(async () => {
+    // 1) 입력 검증
+    if (!id || !email || !pw) {
+      Alert.alert('모든 필드를 입력해주세요.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const auth = await signupAndLogin({
+        username: id,
+        email: email,
+        password: pw,
+      });
+
+      // 예: AsyncStorage 등에 토큰 저장
+      await AsyncStorage.setItem('accessToken', auth.accessToken!);
+      await AsyncStorage.setItem('refreshToken', auth.refreshToken!);
+
+      navigation.replace('Home');
+    } catch (err: any) {
+      console.error('회원가입 실패', err);
+      Alert.alert(
+        '회원가입 실패',
+        err.response?.data?.description || err.message || '알 수 없는 오류',
+      );
+    } finally {
+      setLoading(false);
+    }
+  }, [id, email, pw, navigation]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -32,7 +67,18 @@ export default function Step3({ navigation }: { navigation: any }) {
         </View>
 
         <View style={styles.field}>
-          <Text style={styles.label}>비밀번호</Text>
+          <Text style={styles.label}>이메일</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="이메일 입력"
+            secureTextEntry
+            value={email}
+            onChangeText={setEmail}
+          />
+        </View>
+
+        <View style={styles.field}>
+          <Text style={styles.label}>비밀번호 입력</Text>
           <TextInput
             style={styles.input}
             placeholder="비밀번호 입력"
@@ -41,27 +87,18 @@ export default function Step3({ navigation }: { navigation: any }) {
             onChangeText={setPw}
           />
         </View>
-
-        <View style={styles.field}>
-          <Text style={styles.label}>비밀번호 재확인</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="비밀번호 재확인"
-            secureTextEntry
-            value={pw2}
-            onChangeText={setPw2}
-          />
-        </View>
       </View>
 
       {/* ◆ 2) BUTTON AT BOTTOM */}
       <View style={styles.buttonArea}>
         <TouchableOpacity
           style={[styles.button, styles.nextButton]}
-          onPress={() => navigation.navigate('Login')}
+          onPress={onPressSignUp}
           activeOpacity={0.8}
         >
-          <Text style={styles.buttonText}>가입 완료</Text>
+          <Text style={styles.buttonText}>
+            {loading ? '잠시만 기다려주세요...' : '가입 완료'}
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
