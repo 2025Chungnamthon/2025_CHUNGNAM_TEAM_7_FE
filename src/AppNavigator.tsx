@@ -9,8 +9,6 @@ import {
     Platform,
     SafeAreaView,
     Text,
-    TextInput,
-    Button,
 } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
@@ -19,6 +17,7 @@ import {
 } from '@react-navigation/bottom-tabs';
 import { TabActions } from '@react-navigation/native';
 
+import LoginScreen from "./screens/LoginScreen.tsx";
 import HomeScreen from './screens/HomeScreen';
 import QRScannerScreen from './screens/QRScannerScreen';
 import GiftScreen from './screens/GiftScreen';
@@ -44,21 +43,6 @@ function WelcomeScreen({ navigation }: any) {
             >
                 <Text style={styles.buttonText}>다음</Text>
             </TouchableOpacity>
-        </SafeAreaView>
-    );
-}
-
-// 로그인 화면
-function LoginScreen({ navigation }: any) {
-    return (
-        <SafeAreaView style={styles.center}>
-            <Text style={styles.title}>Login</Text>
-            <TextInput style={styles.input} placeholder="Email" />
-            <TextInput style={styles.input} placeholder="Password" secureTextEntry />
-            <Button title="Login" onPress={() => navigation.replace('MainTabs')} />
-            <Text style={styles.link} onPress={() => navigation.navigate('Signup')}>
-                회원가입 하러 가기
-            </Text>
         </SafeAreaView>
     );
 }

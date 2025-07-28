@@ -13,11 +13,12 @@ export default function SignupStack() {
       screenOptions={{
         headerTitleAlign: 'center',
         headerBackVisible: false,
+        headerShown: false,
       }}
     >
-      <Stack.Screen name="Step1" component={Step1} options={{ title: '회원가입 - 1/3' }} />
-      <Stack.Screen name="Step2" component={Step2} options={{ title: '회원가입 - 2/3' }} />
-      <Stack.Screen name="Step3" component={Step3} options={{ title: '회원가입 - 3/3' }} />
+      <Stack.Screen name="Step1" component={Step1}/>
+      <Stack.Screen name="Step2" component={Step2}/>
+      <Stack.Screen name="Step3" component={Step3} />
     </Stack.Navigator>
   );
 }
