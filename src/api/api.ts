@@ -29,75 +29,75 @@ export interface ResponseCustomObject {
   transaction_time?: string;
   description?: string;
   status?:
-    | '100 CONTINUE'
-    | '101 SWITCHING_PROTOCOLS'
-    | '102 PROCESSING'
-    | '103 EARLY_HINTS'
-    | '103 CHECKPOINT'
-    | '200 OK'
-    | '201 CREATED'
-    | '202 ACCEPTED'
-    | '203 NON_AUTHORITATIVE_INFORMATION'
-    | '204 NO_CONTENT'
-    | '205 RESET_CONTENT'
-    | '206 PARTIAL_CONTENT'
-    | '207 MULTI_STATUS'
-    | '208 ALREADY_REPORTED'
-    | '226 IM_USED'
-    | '300 MULTIPLE_CHOICES'
-    | '301 MOVED_PERMANENTLY'
-    | '302 FOUND'
-    | '302 MOVED_TEMPORARILY'
-    | '303 SEE_OTHER'
-    | '304 NOT_MODIFIED'
-    | '305 USE_PROXY'
-    | '307 TEMPORARY_REDIRECT'
-    | '308 PERMANENT_REDIRECT'
-    | '400 BAD_REQUEST'
-    | '401 UNAUTHORIZED'
-    | '402 PAYMENT_REQUIRED'
-    | '403 FORBIDDEN'
-    | '404 NOT_FOUND'
-    | '405 METHOD_NOT_ALLOWED'
-    | '406 NOT_ACCEPTABLE'
-    | '407 PROXY_AUTHENTICATION_REQUIRED'
-    | '408 REQUEST_TIMEOUT'
-    | '409 CONFLICT'
-    | '410 GONE'
-    | '411 LENGTH_REQUIRED'
-    | '412 PRECONDITION_FAILED'
-    | '413 PAYLOAD_TOO_LARGE'
-    | '413 REQUEST_ENTITY_TOO_LARGE'
-    | '414 URI_TOO_LONG'
-    | '414 REQUEST_URI_TOO_LONG'
-    | '415 UNSUPPORTED_MEDIA_TYPE'
-    | '416 REQUESTED_RANGE_NOT_SATISFIABLE'
-    | '417 EXPECTATION_FAILED'
-    | '418 I_AM_A_TEAPOT'
-    | '419 INSUFFICIENT_SPACE_ON_RESOURCE'
-    | '420 METHOD_FAILURE'
-    | '421 DESTINATION_LOCKED'
-    | '422 UNPROCESSABLE_ENTITY'
-    | '423 LOCKED'
-    | '424 FAILED_DEPENDENCY'
-    | '425 TOO_EARLY'
-    | '426 UPGRADE_REQUIRED'
-    | '428 PRECONDITION_REQUIRED'
-    | '429 TOO_MANY_REQUESTS'
-    | '431 REQUEST_HEADER_FIELDS_TOO_LARGE'
-    | '451 UNAVAILABLE_FOR_LEGAL_REASONS'
-    | '500 INTERNAL_SERVER_ERROR'
-    | '501 NOT_IMPLEMENTED'
-    | '502 BAD_GATEWAY'
-    | '503 SERVICE_UNAVAILABLE'
-    | '504 GATEWAY_TIMEOUT'
-    | '505 HTTP_VERSION_NOT_SUPPORTED'
-    | '506 VARIANT_ALSO_NEGOTIATES'
-    | '507 INSUFFICIENT_STORAGE'
-    | '508 LOOP_DETECTED'
-    | '509 BANDWIDTH_LIMIT_EXCEEDED'
-    | '510 NOT_EXTENDED'
-    | '511 NETWORK_AUTHENTICATION_REQUIRED';
+    | "100 CONTINUE"
+    | "101 SWITCHING_PROTOCOLS"
+    | "102 PROCESSING"
+    | "103 EARLY_HINTS"
+    | "103 CHECKPOINT"
+    | "200 OK"
+    | "201 CREATED"
+    | "202 ACCEPTED"
+    | "203 NON_AUTHORITATIVE_INFORMATION"
+    | "204 NO_CONTENT"
+    | "205 RESET_CONTENT"
+    | "206 PARTIAL_CONTENT"
+    | "207 MULTI_STATUS"
+    | "208 ALREADY_REPORTED"
+    | "226 IM_USED"
+    | "300 MULTIPLE_CHOICES"
+    | "301 MOVED_PERMANENTLY"
+    | "302 FOUND"
+    | "302 MOVED_TEMPORARILY"
+    | "303 SEE_OTHER"
+    | "304 NOT_MODIFIED"
+    | "305 USE_PROXY"
+    | "307 TEMPORARY_REDIRECT"
+    | "308 PERMANENT_REDIRECT"
+    | "400 BAD_REQUEST"
+    | "401 UNAUTHORIZED"
+    | "402 PAYMENT_REQUIRED"
+    | "403 FORBIDDEN"
+    | "404 NOT_FOUND"
+    | "405 METHOD_NOT_ALLOWED"
+    | "406 NOT_ACCEPTABLE"
+    | "407 PROXY_AUTHENTICATION_REQUIRED"
+    | "408 REQUEST_TIMEOUT"
+    | "409 CONFLICT"
+    | "410 GONE"
+    | "411 LENGTH_REQUIRED"
+    | "412 PRECONDITION_FAILED"
+    | "413 PAYLOAD_TOO_LARGE"
+    | "413 REQUEST_ENTITY_TOO_LARGE"
+    | "414 URI_TOO_LONG"
+    | "414 REQUEST_URI_TOO_LONG"
+    | "415 UNSUPPORTED_MEDIA_TYPE"
+    | "416 REQUESTED_RANGE_NOT_SATISFIABLE"
+    | "417 EXPECTATION_FAILED"
+    | "418 I_AM_A_TEAPOT"
+    | "419 INSUFFICIENT_SPACE_ON_RESOURCE"
+    | "420 METHOD_FAILURE"
+    | "421 DESTINATION_LOCKED"
+    | "422 UNPROCESSABLE_ENTITY"
+    | "423 LOCKED"
+    | "424 FAILED_DEPENDENCY"
+    | "425 TOO_EARLY"
+    | "426 UPGRADE_REQUIRED"
+    | "428 PRECONDITION_REQUIRED"
+    | "429 TOO_MANY_REQUESTS"
+    | "431 REQUEST_HEADER_FIELDS_TOO_LARGE"
+    | "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+    | "500 INTERNAL_SERVER_ERROR"
+    | "501 NOT_IMPLEMENTED"
+    | "502 BAD_GATEWAY"
+    | "503 SERVICE_UNAVAILABLE"
+    | "504 GATEWAY_TIMEOUT"
+    | "505 HTTP_VERSION_NOT_SUPPORTED"
+    | "506 VARIANT_ALSO_NEGOTIATES"
+    | "507 INSUFFICIENT_STORAGE"
+    | "508 LOOP_DETECTED"
+    | "509 BANDWIDTH_LIMIT_EXCEEDED"
+    | "510 NOT_EXTENDED"
+    | "511 NETWORK_AUTHENTICATION_REQUIRED";
   /** @format int32 */
   statusCode?: number;
 }
@@ -163,75 +163,75 @@ export interface ResponseCustomStampResponseDto {
   transaction_time?: string;
   description?: string;
   status?:
-    | '100 CONTINUE'
-    | '101 SWITCHING_PROTOCOLS'
-    | '102 PROCESSING'
-    | '103 EARLY_HINTS'
-    | '103 CHECKPOINT'
-    | '200 OK'
-    | '201 CREATED'
-    | '202 ACCEPTED'
-    | '203 NON_AUTHORITATIVE_INFORMATION'
-    | '204 NO_CONTENT'
-    | '205 RESET_CONTENT'
-    | '206 PARTIAL_CONTENT'
-    | '207 MULTI_STATUS'
-    | '208 ALREADY_REPORTED'
-    | '226 IM_USED'
-    | '300 MULTIPLE_CHOICES'
-    | '301 MOVED_PERMANENTLY'
-    | '302 FOUND'
-    | '302 MOVED_TEMPORARILY'
-    | '303 SEE_OTHER'
-    | '304 NOT_MODIFIED'
-    | '305 USE_PROXY'
-    | '307 TEMPORARY_REDIRECT'
-    | '308 PERMANENT_REDIRECT'
-    | '400 BAD_REQUEST'
-    | '401 UNAUTHORIZED'
-    | '402 PAYMENT_REQUIRED'
-    | '403 FORBIDDEN'
-    | '404 NOT_FOUND'
-    | '405 METHOD_NOT_ALLOWED'
-    | '406 NOT_ACCEPTABLE'
-    | '407 PROXY_AUTHENTICATION_REQUIRED'
-    | '408 REQUEST_TIMEOUT'
-    | '409 CONFLICT'
-    | '410 GONE'
-    | '411 LENGTH_REQUIRED'
-    | '412 PRECONDITION_FAILED'
-    | '413 PAYLOAD_TOO_LARGE'
-    | '413 REQUEST_ENTITY_TOO_LARGE'
-    | '414 URI_TOO_LONG'
-    | '414 REQUEST_URI_TOO_LONG'
-    | '415 UNSUPPORTED_MEDIA_TYPE'
-    | '416 REQUESTED_RANGE_NOT_SATISFIABLE'
-    | '417 EXPECTATION_FAILED'
-    | '418 I_AM_A_TEAPOT'
-    | '419 INSUFFICIENT_SPACE_ON_RESOURCE'
-    | '420 METHOD_FAILURE'
-    | '421 DESTINATION_LOCKED'
-    | '422 UNPROCESSABLE_ENTITY'
-    | '423 LOCKED'
-    | '424 FAILED_DEPENDENCY'
-    | '425 TOO_EARLY'
-    | '426 UPGRADE_REQUIRED'
-    | '428 PRECONDITION_REQUIRED'
-    | '429 TOO_MANY_REQUESTS'
-    | '431 REQUEST_HEADER_FIELDS_TOO_LARGE'
-    | '451 UNAVAILABLE_FOR_LEGAL_REASONS'
-    | '500 INTERNAL_SERVER_ERROR'
-    | '501 NOT_IMPLEMENTED'
-    | '502 BAD_GATEWAY'
-    | '503 SERVICE_UNAVAILABLE'
-    | '504 GATEWAY_TIMEOUT'
-    | '505 HTTP_VERSION_NOT_SUPPORTED'
-    | '506 VARIANT_ALSO_NEGOTIATES'
-    | '507 INSUFFICIENT_STORAGE'
-    | '508 LOOP_DETECTED'
-    | '509 BANDWIDTH_LIMIT_EXCEEDED'
-    | '510 NOT_EXTENDED'
-    | '511 NETWORK_AUTHENTICATION_REQUIRED';
+    | "100 CONTINUE"
+    | "101 SWITCHING_PROTOCOLS"
+    | "102 PROCESSING"
+    | "103 EARLY_HINTS"
+    | "103 CHECKPOINT"
+    | "200 OK"
+    | "201 CREATED"
+    | "202 ACCEPTED"
+    | "203 NON_AUTHORITATIVE_INFORMATION"
+    | "204 NO_CONTENT"
+    | "205 RESET_CONTENT"
+    | "206 PARTIAL_CONTENT"
+    | "207 MULTI_STATUS"
+    | "208 ALREADY_REPORTED"
+    | "226 IM_USED"
+    | "300 MULTIPLE_CHOICES"
+    | "301 MOVED_PERMANENTLY"
+    | "302 FOUND"
+    | "302 MOVED_TEMPORARILY"
+    | "303 SEE_OTHER"
+    | "304 NOT_MODIFIED"
+    | "305 USE_PROXY"
+    | "307 TEMPORARY_REDIRECT"
+    | "308 PERMANENT_REDIRECT"
+    | "400 BAD_REQUEST"
+    | "401 UNAUTHORIZED"
+    | "402 PAYMENT_REQUIRED"
+    | "403 FORBIDDEN"
+    | "404 NOT_FOUND"
+    | "405 METHOD_NOT_ALLOWED"
+    | "406 NOT_ACCEPTABLE"
+    | "407 PROXY_AUTHENTICATION_REQUIRED"
+    | "408 REQUEST_TIMEOUT"
+    | "409 CONFLICT"
+    | "410 GONE"
+    | "411 LENGTH_REQUIRED"
+    | "412 PRECONDITION_FAILED"
+    | "413 PAYLOAD_TOO_LARGE"
+    | "413 REQUEST_ENTITY_TOO_LARGE"
+    | "414 URI_TOO_LONG"
+    | "414 REQUEST_URI_TOO_LONG"
+    | "415 UNSUPPORTED_MEDIA_TYPE"
+    | "416 REQUESTED_RANGE_NOT_SATISFIABLE"
+    | "417 EXPECTATION_FAILED"
+    | "418 I_AM_A_TEAPOT"
+    | "419 INSUFFICIENT_SPACE_ON_RESOURCE"
+    | "420 METHOD_FAILURE"
+    | "421 DESTINATION_LOCKED"
+    | "422 UNPROCESSABLE_ENTITY"
+    | "423 LOCKED"
+    | "424 FAILED_DEPENDENCY"
+    | "425 TOO_EARLY"
+    | "426 UPGRADE_REQUIRED"
+    | "428 PRECONDITION_REQUIRED"
+    | "429 TOO_MANY_REQUESTS"
+    | "431 REQUEST_HEADER_FIELDS_TOO_LARGE"
+    | "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+    | "500 INTERNAL_SERVER_ERROR"
+    | "501 NOT_IMPLEMENTED"
+    | "502 BAD_GATEWAY"
+    | "503 SERVICE_UNAVAILABLE"
+    | "504 GATEWAY_TIMEOUT"
+    | "505 HTTP_VERSION_NOT_SUPPORTED"
+    | "506 VARIANT_ALSO_NEGOTIATES"
+    | "507 INSUFFICIENT_STORAGE"
+    | "508 LOOP_DETECTED"
+    | "509 BANDWIDTH_LIMIT_EXCEEDED"
+    | "510 NOT_EXTENDED"
+    | "511 NETWORK_AUTHENTICATION_REQUIRED";
   /** @format int32 */
   statusCode?: number;
 }
@@ -269,75 +269,75 @@ export interface ResponseCustomFavResponseDto {
   transaction_time?: string;
   description?: string;
   status?:
-    | '100 CONTINUE'
-    | '101 SWITCHING_PROTOCOLS'
-    | '102 PROCESSING'
-    | '103 EARLY_HINTS'
-    | '103 CHECKPOINT'
-    | '200 OK'
-    | '201 CREATED'
-    | '202 ACCEPTED'
-    | '203 NON_AUTHORITATIVE_INFORMATION'
-    | '204 NO_CONTENT'
-    | '205 RESET_CONTENT'
-    | '206 PARTIAL_CONTENT'
-    | '207 MULTI_STATUS'
-    | '208 ALREADY_REPORTED'
-    | '226 IM_USED'
-    | '300 MULTIPLE_CHOICES'
-    | '301 MOVED_PERMANENTLY'
-    | '302 FOUND'
-    | '302 MOVED_TEMPORARILY'
-    | '303 SEE_OTHER'
-    | '304 NOT_MODIFIED'
-    | '305 USE_PROXY'
-    | '307 TEMPORARY_REDIRECT'
-    | '308 PERMANENT_REDIRECT'
-    | '400 BAD_REQUEST'
-    | '401 UNAUTHORIZED'
-    | '402 PAYMENT_REQUIRED'
-    | '403 FORBIDDEN'
-    | '404 NOT_FOUND'
-    | '405 METHOD_NOT_ALLOWED'
-    | '406 NOT_ACCEPTABLE'
-    | '407 PROXY_AUTHENTICATION_REQUIRED'
-    | '408 REQUEST_TIMEOUT'
-    | '409 CONFLICT'
-    | '410 GONE'
-    | '411 LENGTH_REQUIRED'
-    | '412 PRECONDITION_FAILED'
-    | '413 PAYLOAD_TOO_LARGE'
-    | '413 REQUEST_ENTITY_TOO_LARGE'
-    | '414 URI_TOO_LONG'
-    | '414 REQUEST_URI_TOO_LONG'
-    | '415 UNSUPPORTED_MEDIA_TYPE'
-    | '416 REQUESTED_RANGE_NOT_SATISFIABLE'
-    | '417 EXPECTATION_FAILED'
-    | '418 I_AM_A_TEAPOT'
-    | '419 INSUFFICIENT_SPACE_ON_RESOURCE'
-    | '420 METHOD_FAILURE'
-    | '421 DESTINATION_LOCKED'
-    | '422 UNPROCESSABLE_ENTITY'
-    | '423 LOCKED'
-    | '424 FAILED_DEPENDENCY'
-    | '425 TOO_EARLY'
-    | '426 UPGRADE_REQUIRED'
-    | '428 PRECONDITION_REQUIRED'
-    | '429 TOO_MANY_REQUESTS'
-    | '431 REQUEST_HEADER_FIELDS_TOO_LARGE'
-    | '451 UNAVAILABLE_FOR_LEGAL_REASONS'
-    | '500 INTERNAL_SERVER_ERROR'
-    | '501 NOT_IMPLEMENTED'
-    | '502 BAD_GATEWAY'
-    | '503 SERVICE_UNAVAILABLE'
-    | '504 GATEWAY_TIMEOUT'
-    | '505 HTTP_VERSION_NOT_SUPPORTED'
-    | '506 VARIANT_ALSO_NEGOTIATES'
-    | '507 INSUFFICIENT_STORAGE'
-    | '508 LOOP_DETECTED'
-    | '509 BANDWIDTH_LIMIT_EXCEEDED'
-    | '510 NOT_EXTENDED'
-    | '511 NETWORK_AUTHENTICATION_REQUIRED';
+    | "100 CONTINUE"
+    | "101 SWITCHING_PROTOCOLS"
+    | "102 PROCESSING"
+    | "103 EARLY_HINTS"
+    | "103 CHECKPOINT"
+    | "200 OK"
+    | "201 CREATED"
+    | "202 ACCEPTED"
+    | "203 NON_AUTHORITATIVE_INFORMATION"
+    | "204 NO_CONTENT"
+    | "205 RESET_CONTENT"
+    | "206 PARTIAL_CONTENT"
+    | "207 MULTI_STATUS"
+    | "208 ALREADY_REPORTED"
+    | "226 IM_USED"
+    | "300 MULTIPLE_CHOICES"
+    | "301 MOVED_PERMANENTLY"
+    | "302 FOUND"
+    | "302 MOVED_TEMPORARILY"
+    | "303 SEE_OTHER"
+    | "304 NOT_MODIFIED"
+    | "305 USE_PROXY"
+    | "307 TEMPORARY_REDIRECT"
+    | "308 PERMANENT_REDIRECT"
+    | "400 BAD_REQUEST"
+    | "401 UNAUTHORIZED"
+    | "402 PAYMENT_REQUIRED"
+    | "403 FORBIDDEN"
+    | "404 NOT_FOUND"
+    | "405 METHOD_NOT_ALLOWED"
+    | "406 NOT_ACCEPTABLE"
+    | "407 PROXY_AUTHENTICATION_REQUIRED"
+    | "408 REQUEST_TIMEOUT"
+    | "409 CONFLICT"
+    | "410 GONE"
+    | "411 LENGTH_REQUIRED"
+    | "412 PRECONDITION_FAILED"
+    | "413 PAYLOAD_TOO_LARGE"
+    | "413 REQUEST_ENTITY_TOO_LARGE"
+    | "414 URI_TOO_LONG"
+    | "414 REQUEST_URI_TOO_LONG"
+    | "415 UNSUPPORTED_MEDIA_TYPE"
+    | "416 REQUESTED_RANGE_NOT_SATISFIABLE"
+    | "417 EXPECTATION_FAILED"
+    | "418 I_AM_A_TEAPOT"
+    | "419 INSUFFICIENT_SPACE_ON_RESOURCE"
+    | "420 METHOD_FAILURE"
+    | "421 DESTINATION_LOCKED"
+    | "422 UNPROCESSABLE_ENTITY"
+    | "423 LOCKED"
+    | "424 FAILED_DEPENDENCY"
+    | "425 TOO_EARLY"
+    | "426 UPGRADE_REQUIRED"
+    | "428 PRECONDITION_REQUIRED"
+    | "429 TOO_MANY_REQUESTS"
+    | "431 REQUEST_HEADER_FIELDS_TOO_LARGE"
+    | "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+    | "500 INTERNAL_SERVER_ERROR"
+    | "501 NOT_IMPLEMENTED"
+    | "502 BAD_GATEWAY"
+    | "503 SERVICE_UNAVAILABLE"
+    | "504 GATEWAY_TIMEOUT"
+    | "505 HTTP_VERSION_NOT_SUPPORTED"
+    | "506 VARIANT_ALSO_NEGOTIATES"
+    | "507 INSUFFICIENT_STORAGE"
+    | "508 LOOP_DETECTED"
+    | "509 BANDWIDTH_LIMIT_EXCEEDED"
+    | "510 NOT_EXTENDED"
+    | "511 NETWORK_AUTHENTICATION_REQUIRED";
   /** @format int32 */
   statusCode?: number;
 }
@@ -422,75 +422,75 @@ export interface ResponseCustomListFavResponseDto {
   transaction_time?: string;
   description?: string;
   status?:
-    | '100 CONTINUE'
-    | '101 SWITCHING_PROTOCOLS'
-    | '102 PROCESSING'
-    | '103 EARLY_HINTS'
-    | '103 CHECKPOINT'
-    | '200 OK'
-    | '201 CREATED'
-    | '202 ACCEPTED'
-    | '203 NON_AUTHORITATIVE_INFORMATION'
-    | '204 NO_CONTENT'
-    | '205 RESET_CONTENT'
-    | '206 PARTIAL_CONTENT'
-    | '207 MULTI_STATUS'
-    | '208 ALREADY_REPORTED'
-    | '226 IM_USED'
-    | '300 MULTIPLE_CHOICES'
-    | '301 MOVED_PERMANENTLY'
-    | '302 FOUND'
-    | '302 MOVED_TEMPORARILY'
-    | '303 SEE_OTHER'
-    | '304 NOT_MODIFIED'
-    | '305 USE_PROXY'
-    | '307 TEMPORARY_REDIRECT'
-    | '308 PERMANENT_REDIRECT'
-    | '400 BAD_REQUEST'
-    | '401 UNAUTHORIZED'
-    | '402 PAYMENT_REQUIRED'
-    | '403 FORBIDDEN'
-    | '404 NOT_FOUND'
-    | '405 METHOD_NOT_ALLOWED'
-    | '406 NOT_ACCEPTABLE'
-    | '407 PROXY_AUTHENTICATION_REQUIRED'
-    | '408 REQUEST_TIMEOUT'
-    | '409 CONFLICT'
-    | '410 GONE'
-    | '411 LENGTH_REQUIRED'
-    | '412 PRECONDITION_FAILED'
-    | '413 PAYLOAD_TOO_LARGE'
-    | '413 REQUEST_ENTITY_TOO_LARGE'
-    | '414 URI_TOO_LONG'
-    | '414 REQUEST_URI_TOO_LONG'
-    | '415 UNSUPPORTED_MEDIA_TYPE'
-    | '416 REQUESTED_RANGE_NOT_SATISFIABLE'
-    | '417 EXPECTATION_FAILED'
-    | '418 I_AM_A_TEAPOT'
-    | '419 INSUFFICIENT_SPACE_ON_RESOURCE'
-    | '420 METHOD_FAILURE'
-    | '421 DESTINATION_LOCKED'
-    | '422 UNPROCESSABLE_ENTITY'
-    | '423 LOCKED'
-    | '424 FAILED_DEPENDENCY'
-    | '425 TOO_EARLY'
-    | '426 UPGRADE_REQUIRED'
-    | '428 PRECONDITION_REQUIRED'
-    | '429 TOO_MANY_REQUESTS'
-    | '431 REQUEST_HEADER_FIELDS_TOO_LARGE'
-    | '451 UNAVAILABLE_FOR_LEGAL_REASONS'
-    | '500 INTERNAL_SERVER_ERROR'
-    | '501 NOT_IMPLEMENTED'
-    | '502 BAD_GATEWAY'
-    | '503 SERVICE_UNAVAILABLE'
-    | '504 GATEWAY_TIMEOUT'
-    | '505 HTTP_VERSION_NOT_SUPPORTED'
-    | '506 VARIANT_ALSO_NEGOTIATES'
-    | '507 INSUFFICIENT_STORAGE'
-    | '508 LOOP_DETECTED'
-    | '509 BANDWIDTH_LIMIT_EXCEEDED'
-    | '510 NOT_EXTENDED'
-    | '511 NETWORK_AUTHENTICATION_REQUIRED';
+    | "100 CONTINUE"
+    | "101 SWITCHING_PROTOCOLS"
+    | "102 PROCESSING"
+    | "103 EARLY_HINTS"
+    | "103 CHECKPOINT"
+    | "200 OK"
+    | "201 CREATED"
+    | "202 ACCEPTED"
+    | "203 NON_AUTHORITATIVE_INFORMATION"
+    | "204 NO_CONTENT"
+    | "205 RESET_CONTENT"
+    | "206 PARTIAL_CONTENT"
+    | "207 MULTI_STATUS"
+    | "208 ALREADY_REPORTED"
+    | "226 IM_USED"
+    | "300 MULTIPLE_CHOICES"
+    | "301 MOVED_PERMANENTLY"
+    | "302 FOUND"
+    | "302 MOVED_TEMPORARILY"
+    | "303 SEE_OTHER"
+    | "304 NOT_MODIFIED"
+    | "305 USE_PROXY"
+    | "307 TEMPORARY_REDIRECT"
+    | "308 PERMANENT_REDIRECT"
+    | "400 BAD_REQUEST"
+    | "401 UNAUTHORIZED"
+    | "402 PAYMENT_REQUIRED"
+    | "403 FORBIDDEN"
+    | "404 NOT_FOUND"
+    | "405 METHOD_NOT_ALLOWED"
+    | "406 NOT_ACCEPTABLE"
+    | "407 PROXY_AUTHENTICATION_REQUIRED"
+    | "408 REQUEST_TIMEOUT"
+    | "409 CONFLICT"
+    | "410 GONE"
+    | "411 LENGTH_REQUIRED"
+    | "412 PRECONDITION_FAILED"
+    | "413 PAYLOAD_TOO_LARGE"
+    | "413 REQUEST_ENTITY_TOO_LARGE"
+    | "414 URI_TOO_LONG"
+    | "414 REQUEST_URI_TOO_LONG"
+    | "415 UNSUPPORTED_MEDIA_TYPE"
+    | "416 REQUESTED_RANGE_NOT_SATISFIABLE"
+    | "417 EXPECTATION_FAILED"
+    | "418 I_AM_A_TEAPOT"
+    | "419 INSUFFICIENT_SPACE_ON_RESOURCE"
+    | "420 METHOD_FAILURE"
+    | "421 DESTINATION_LOCKED"
+    | "422 UNPROCESSABLE_ENTITY"
+    | "423 LOCKED"
+    | "424 FAILED_DEPENDENCY"
+    | "425 TOO_EARLY"
+    | "426 UPGRADE_REQUIRED"
+    | "428 PRECONDITION_REQUIRED"
+    | "429 TOO_MANY_REQUESTS"
+    | "431 REQUEST_HEADER_FIELDS_TOO_LARGE"
+    | "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+    | "500 INTERNAL_SERVER_ERROR"
+    | "501 NOT_IMPLEMENTED"
+    | "502 BAD_GATEWAY"
+    | "503 SERVICE_UNAVAILABLE"
+    | "504 GATEWAY_TIMEOUT"
+    | "505 HTTP_VERSION_NOT_SUPPORTED"
+    | "506 VARIANT_ALSO_NEGOTIATES"
+    | "507 INSUFFICIENT_STORAGE"
+    | "508 LOOP_DETECTED"
+    | "509 BANDWIDTH_LIMIT_EXCEEDED"
+    | "510 NOT_EXTENDED"
+    | "511 NETWORK_AUTHENTICATION_REQUIRED";
   /** @format int32 */
   statusCode?: number;
 }
@@ -502,75 +502,75 @@ export interface ResponseCustomVoid {
   transaction_time?: string;
   description?: string;
   status?:
-    | '100 CONTINUE'
-    | '101 SWITCHING_PROTOCOLS'
-    | '102 PROCESSING'
-    | '103 EARLY_HINTS'
-    | '103 CHECKPOINT'
-    | '200 OK'
-    | '201 CREATED'
-    | '202 ACCEPTED'
-    | '203 NON_AUTHORITATIVE_INFORMATION'
-    | '204 NO_CONTENT'
-    | '205 RESET_CONTENT'
-    | '206 PARTIAL_CONTENT'
-    | '207 MULTI_STATUS'
-    | '208 ALREADY_REPORTED'
-    | '226 IM_USED'
-    | '300 MULTIPLE_CHOICES'
-    | '301 MOVED_PERMANENTLY'
-    | '302 FOUND'
-    | '302 MOVED_TEMPORARILY'
-    | '303 SEE_OTHER'
-    | '304 NOT_MODIFIED'
-    | '305 USE_PROXY'
-    | '307 TEMPORARY_REDIRECT'
-    | '308 PERMANENT_REDIRECT'
-    | '400 BAD_REQUEST'
-    | '401 UNAUTHORIZED'
-    | '402 PAYMENT_REQUIRED'
-    | '403 FORBIDDEN'
-    | '404 NOT_FOUND'
-    | '405 METHOD_NOT_ALLOWED'
-    | '406 NOT_ACCEPTABLE'
-    | '407 PROXY_AUTHENTICATION_REQUIRED'
-    | '408 REQUEST_TIMEOUT'
-    | '409 CONFLICT'
-    | '410 GONE'
-    | '411 LENGTH_REQUIRED'
-    | '412 PRECONDITION_FAILED'
-    | '413 PAYLOAD_TOO_LARGE'
-    | '413 REQUEST_ENTITY_TOO_LARGE'
-    | '414 URI_TOO_LONG'
-    | '414 REQUEST_URI_TOO_LONG'
-    | '415 UNSUPPORTED_MEDIA_TYPE'
-    | '416 REQUESTED_RANGE_NOT_SATISFIABLE'
-    | '417 EXPECTATION_FAILED'
-    | '418 I_AM_A_TEAPOT'
-    | '419 INSUFFICIENT_SPACE_ON_RESOURCE'
-    | '420 METHOD_FAILURE'
-    | '421 DESTINATION_LOCKED'
-    | '422 UNPROCESSABLE_ENTITY'
-    | '423 LOCKED'
-    | '424 FAILED_DEPENDENCY'
-    | '425 TOO_EARLY'
-    | '426 UPGRADE_REQUIRED'
-    | '428 PRECONDITION_REQUIRED'
-    | '429 TOO_MANY_REQUESTS'
-    | '431 REQUEST_HEADER_FIELDS_TOO_LARGE'
-    | '451 UNAVAILABLE_FOR_LEGAL_REASONS'
-    | '500 INTERNAL_SERVER_ERROR'
-    | '501 NOT_IMPLEMENTED'
-    | '502 BAD_GATEWAY'
-    | '503 SERVICE_UNAVAILABLE'
-    | '504 GATEWAY_TIMEOUT'
-    | '505 HTTP_VERSION_NOT_SUPPORTED'
-    | '506 VARIANT_ALSO_NEGOTIATES'
-    | '507 INSUFFICIENT_STORAGE'
-    | '508 LOOP_DETECTED'
-    | '509 BANDWIDTH_LIMIT_EXCEEDED'
-    | '510 NOT_EXTENDED'
-    | '511 NETWORK_AUTHENTICATION_REQUIRED';
+    | "100 CONTINUE"
+    | "101 SWITCHING_PROTOCOLS"
+    | "102 PROCESSING"
+    | "103 EARLY_HINTS"
+    | "103 CHECKPOINT"
+    | "200 OK"
+    | "201 CREATED"
+    | "202 ACCEPTED"
+    | "203 NON_AUTHORITATIVE_INFORMATION"
+    | "204 NO_CONTENT"
+    | "205 RESET_CONTENT"
+    | "206 PARTIAL_CONTENT"
+    | "207 MULTI_STATUS"
+    | "208 ALREADY_REPORTED"
+    | "226 IM_USED"
+    | "300 MULTIPLE_CHOICES"
+    | "301 MOVED_PERMANENTLY"
+    | "302 FOUND"
+    | "302 MOVED_TEMPORARILY"
+    | "303 SEE_OTHER"
+    | "304 NOT_MODIFIED"
+    | "305 USE_PROXY"
+    | "307 TEMPORARY_REDIRECT"
+    | "308 PERMANENT_REDIRECT"
+    | "400 BAD_REQUEST"
+    | "401 UNAUTHORIZED"
+    | "402 PAYMENT_REQUIRED"
+    | "403 FORBIDDEN"
+    | "404 NOT_FOUND"
+    | "405 METHOD_NOT_ALLOWED"
+    | "406 NOT_ACCEPTABLE"
+    | "407 PROXY_AUTHENTICATION_REQUIRED"
+    | "408 REQUEST_TIMEOUT"
+    | "409 CONFLICT"
+    | "410 GONE"
+    | "411 LENGTH_REQUIRED"
+    | "412 PRECONDITION_FAILED"
+    | "413 PAYLOAD_TOO_LARGE"
+    | "413 REQUEST_ENTITY_TOO_LARGE"
+    | "414 URI_TOO_LONG"
+    | "414 REQUEST_URI_TOO_LONG"
+    | "415 UNSUPPORTED_MEDIA_TYPE"
+    | "416 REQUESTED_RANGE_NOT_SATISFIABLE"
+    | "417 EXPECTATION_FAILED"
+    | "418 I_AM_A_TEAPOT"
+    | "419 INSUFFICIENT_SPACE_ON_RESOURCE"
+    | "420 METHOD_FAILURE"
+    | "421 DESTINATION_LOCKED"
+    | "422 UNPROCESSABLE_ENTITY"
+    | "423 LOCKED"
+    | "424 FAILED_DEPENDENCY"
+    | "425 TOO_EARLY"
+    | "426 UPGRADE_REQUIRED"
+    | "428 PRECONDITION_REQUIRED"
+    | "429 TOO_MANY_REQUESTS"
+    | "431 REQUEST_HEADER_FIELDS_TOO_LARGE"
+    | "451 UNAVAILABLE_FOR_LEGAL_REASONS"
+    | "500 INTERNAL_SERVER_ERROR"
+    | "501 NOT_IMPLEMENTED"
+    | "502 BAD_GATEWAY"
+    | "503 SERVICE_UNAVAILABLE"
+    | "504 GATEWAY_TIMEOUT"
+    | "505 HTTP_VERSION_NOT_SUPPORTED"
+    | "506 VARIANT_ALSO_NEGOTIATES"
+    | "507 INSUFFICIENT_STORAGE"
+    | "508 LOOP_DETECTED"
+    | "509 BANDWIDTH_LIMIT_EXCEEDED"
+    | "510 NOT_EXTENDED"
+    | "511 NETWORK_AUTHENTICATION_REQUIRED";
   /** @format int32 */
   statusCode?: number;
 }
@@ -581,13 +581,13 @@ import type {
   AxiosResponse,
   HeadersDefaults,
   ResponseType,
-} from 'axios';
-import axios from 'axios';
+} from "axios";
+import axios from "axios";
 
 export type QueryParamsType = Record<string | number, any>;
 
 export interface FullRequestParams
-  extends Omit<AxiosRequestConfig, 'data' | 'params' | 'url' | 'responseType'> {
+  extends Omit<AxiosRequestConfig, "data" | "params" | "url" | "responseType"> {
   /** set parameter to `true` for call `securityWorker` for this request */
   secure?: boolean;
   /** request path */
@@ -604,11 +604,11 @@ export interface FullRequestParams
 
 export type RequestParams = Omit<
   FullRequestParams,
-  'body' | 'method' | 'query' | 'path'
+  "body" | "method" | "query" | "path"
 >;
 
 export interface ApiConfig<SecurityDataType = unknown>
-  extends Omit<AxiosRequestConfig, 'data' | 'cancelToken'> {
+  extends Omit<AxiosRequestConfig, "data" | "cancelToken"> {
   securityWorker?: (
     securityData: SecurityDataType | null,
   ) => Promise<AxiosRequestConfig | void> | AxiosRequestConfig | void;
@@ -617,17 +617,17 @@ export interface ApiConfig<SecurityDataType = unknown>
 }
 
 export enum ContentType {
-  Json = 'application/json',
-  JsonApi = 'application/vnd.api+json',
-  FormData = 'multipart/form-data',
-  UrlEncoded = 'application/x-www-form-urlencoded',
-  Text = 'text/plain',
+  Json = "application/json",
+  JsonApi = "application/vnd.api+json",
+  FormData = "multipart/form-data",
+  UrlEncoded = "application/x-www-form-urlencoded",
+  Text = "text/plain",
 }
 
 export class HttpClient<SecurityDataType = unknown> {
   public instance: AxiosInstance;
   private securityData: SecurityDataType | null = null;
-  private securityWorker?: ApiConfig<SecurityDataType>['securityWorker'];
+  private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
   private secure?: boolean;
   private format?: ResponseType;
 
@@ -639,7 +639,7 @@ export class HttpClient<SecurityDataType = unknown> {
   }: ApiConfig<SecurityDataType> = {}) {
     this.instance = axios.create({
       ...axiosConfig,
-      baseURL: axiosConfig.baseURL || 'http://43.200.191.61:8080',
+      baseURL: axiosConfig.baseURL || "http://43.200.191.61:8080",
     });
     this.secure = secure;
     this.format = format;
@@ -673,7 +673,7 @@ export class HttpClient<SecurityDataType = unknown> {
   }
 
   protected stringifyFormItem(formItem: unknown) {
-    if (typeof formItem === 'object' && formItem !== null) {
+    if (typeof formItem === "object" && formItem !== null) {
       return JSON.stringify(formItem);
     } else {
       return `${formItem}`;
@@ -711,7 +711,7 @@ export class HttpClient<SecurityDataType = unknown> {
     ...params
   }: FullRequestParams): Promise<AxiosResponse<T>> => {
     const secureParams =
-      ((typeof secure === 'boolean' ? secure : this.secure) &&
+      ((typeof secure === "boolean" ? secure : this.secure) &&
         this.securityWorker &&
         (await this.securityWorker(this.securityData))) ||
       {};
@@ -722,7 +722,7 @@ export class HttpClient<SecurityDataType = unknown> {
       type === ContentType.FormData &&
       body &&
       body !== null &&
-      typeof body === 'object'
+      typeof body === "object"
     ) {
       body = this.createFormData(body as Record<string, unknown>);
     }
@@ -731,7 +731,7 @@ export class HttpClient<SecurityDataType = unknown> {
       type === ContentType.Text &&
       body &&
       body !== null &&
-      typeof body !== 'string'
+      typeof body !== "string"
     ) {
       body = JSON.stringify(body);
     }
@@ -740,7 +740,7 @@ export class HttpClient<SecurityDataType = unknown> {
       ...requestParams,
       headers: {
         ...(requestParams.headers || {}),
-        ...(type ? { 'Content-Type': type } : {}),
+        ...(type ? { "Content-Type": type } : {}),
       },
       params: query,
       responseType: responseFormat,
@@ -772,7 +772,7 @@ export class Api<
     generateQrCode: (data: QrCreateRequest, params: RequestParams = {}) =>
       this.request<QrCreateResponse, any>({
         path: `/qr/generate`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
@@ -792,7 +792,7 @@ export class Api<
     refresh: (params: RequestParams = {}) =>
       this.request<ResponseCustomObject, any>({
         path: `/api/token/refresh`,
-        method: 'POST',
+        method: "POST",
         secure: true,
         ...params,
       }),
@@ -809,11 +809,11 @@ export class Api<
     scanStamp: (data: StampRequestDto, params: RequestParams = {}) =>
       this.request<StampResponseDto, ResponseCustomStampResponseDto>({
         path: `/api/stamps/scan`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -829,9 +829,9 @@ export class Api<
     changeStamp2Reward: (marketId: number, params: RequestParams = {}) =>
       this.request<RewardResponse[], any>({
         path: `/api/rewards/${marketId}`,
-        method: 'POST',
+        method: "POST",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -847,9 +847,9 @@ export class Api<
     listBookmarks: (params: RequestParams = {}) =>
       this.request<FavResponseDto[], ResponseCustomListFavResponseDto>({
         path: `/api/bookmarks`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -865,11 +865,11 @@ export class Api<
     addBookmark: (data: FavRequestDto, params: RequestParams = {}) =>
       this.request<FavResponseDto, ResponseCustomFavResponseDto>({
         path: `/api/bookmarks`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -885,11 +885,11 @@ export class Api<
     signupUser: (data: SignupRequest, params: RequestParams = {}) =>
       this.request<JwtResponse, ResponseCustomObject>({
         path: `/api/auth/signup`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -905,11 +905,11 @@ export class Api<
     loginUser: (data: LoginRequest, params: RequestParams = {}) =>
       this.request<JwtResponse, ResponseCustomObject>({
         path: `/api/auth/login`,
-        method: 'POST',
+        method: "POST",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -925,9 +925,9 @@ export class Api<
     getAllRewardByUserId: (params: RequestParams = {}) =>
       this.request<RewardResponse[], any>({
         path: `/api/rewards`,
-        method: 'GET',
+        method: "GET",
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -949,10 +949,10 @@ export class Api<
     ) =>
       this.request<MarketResponse[], any>({
         path: `/api/my/markets`,
-        method: 'GET',
+        method: "GET",
         query: query,
         secure: true,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -968,11 +968,11 @@ export class Api<
     searchMarkets: (data: SearchMarketRequest, params: RequestParams = {}) =>
       this.request<MarketResponse[], ResponseCustomObject>({
         path: `/api/markets/search`,
-        method: 'GET',
+        method: "GET",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -991,11 +991,11 @@ export class Api<
     ) =>
       this.request<MarketDetailResponse, ResponseCustomObject>({
         path: `/api/markets/detail`,
-        method: 'GET',
+        method: "GET",
         body: data,
         secure: true,
         type: ContentType.Json,
-        format: 'json',
+        format: "json",
         ...params,
       }),
 
@@ -1011,7 +1011,7 @@ export class Api<
     removeBookmark: (marketId: number, params: RequestParams = {}) =>
       this.request<ResponseCustomVoid, ResponseCustomVoid>({
         path: `/api/bookmarks/${marketId}`,
-        method: 'DELETE',
+        method: "DELETE",
         secure: true,
         ...params,
       }),
