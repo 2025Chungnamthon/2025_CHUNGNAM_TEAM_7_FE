@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
     paddingBottom: P + 60,
     backgroundColor: 'transparent',
   },
-
   headerWrapper: {
     marginBottom: 70,
   },

@@ -15,3 +15,4 @@ const styles = StyleSheet.create({
   text: { fontSize: 24, fontWeight: 'bold' },
   text2: { fontSize: 16, color: '#6E6E6E', marginTop:15 },
 });
+

@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   info: {
     flex: 1,
   },
+
   name: {
     fontSize: 16,
     fontWeight: '600',

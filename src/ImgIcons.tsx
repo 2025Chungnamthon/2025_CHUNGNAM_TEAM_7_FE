@@ -5,3 +5,4 @@ export const Icons = {
   Gift: require('./img/main-gift.png'),
   Profile: require('./img/main-mypage.png'),
 };
+

@@ -10,7 +10,6 @@ export default function MapScreen({ navigation }: any) {
   const [searchText, setSearchText] = useState('');
   const [selectedMarket, setSelectedMarket] = useState<Market | null>(null);
 
-  // 🚧 더미 데이터로 시트 미리보기
   useEffect(() => {
     const dummy: Market = {
       name: '천안중앙시장',
