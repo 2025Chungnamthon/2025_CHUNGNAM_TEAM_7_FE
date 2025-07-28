@@ -5,9 +5,7 @@ import {
   MarketResponse,
   MarketDetailResponse,
 } from '@/api/api';
-import { http } from './http';
 
-const BASE_URL = 'http://43.200.191.61:8080';
 const api = new Api(); // http 인스턴스는 default로 주입
 
 /**
