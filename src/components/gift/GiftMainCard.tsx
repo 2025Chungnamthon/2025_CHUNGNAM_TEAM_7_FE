@@ -9,7 +9,7 @@ export default function GiftMainCard({ totalCount }: Props) {
       <Text style={styles.text}>
         보유상품 <Text style={styles.count}>{totalCount}개</Text>
       </Text>
-      <Image source={require('../../img/상품보관소_아이콘.png')} />
+      <Image source={require('../../img/gift-maincard.png')} />
       <Text style={styles.sub}>
         스탬프를 통해 교환한 상품을 보관하고 있어요
       </Text>

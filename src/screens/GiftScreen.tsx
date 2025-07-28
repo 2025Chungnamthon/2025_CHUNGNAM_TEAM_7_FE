@@ -10,13 +10,13 @@ const gifts: GiftItem[] = [
     id: '1',
     title: '온누리상품권 5000원권',
     quantity: 3,
-    image: require('../img/온누리상품권_5000원권.png'),
+    image: require('../img/5000.png'),
   },
   {
     id: '2',
     title: '온누리상품권 10000원권',
     quantity: 1,
-    image: require('../img/온누리상품권_10000원권.png'),
+    image: require('../img/10000.png'),
   },
 ];
 

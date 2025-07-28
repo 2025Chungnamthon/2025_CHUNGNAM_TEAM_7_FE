@@ -36,8 +36,14 @@ const Tab = createBottomTabNavigator();
 function WelcomeScreen({ navigation }: any) {
     return (
         <SafeAreaView style={styles.center}>
-            <Text style={styles.title}>도장찍어가유</Text>
-            <Button title="다음" onPress={() => navigation.navigate('Onb1')} />
+            <Image source={require('./img/logo.png')} />
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('Onb1')}
+                activeOpacity={0.8}
+            >
+                <Text style={styles.buttonText}>다음</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }
@@ -58,22 +64,53 @@ function LoginScreen({ navigation }: any) {
 }
 
 // 온보딩 공통 컴포넌트
-const OnbScreen = ({ navigation, text, next }: any) => (
-    <View style={styles.onb}>
+const OnbScreen = ({ navigation, text, next, img }: any) => (
+    <SafeAreaView style={styles.onb}>
+        <Image source={img} style={styles.img} />
+
         <Text style={styles.onbText}>{text}</Text>
-        <Button title="다음" onPress={() => navigation.navigate(next)} />
-    </View>
+
+        <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate(next)}
+            activeOpacity={0.8}
+        >
+            <Text style={styles.buttonText}>다음</Text>
+        </TouchableOpacity>
+    </SafeAreaView>
 );
+
 
 // 마지막 온보딩
 function Onb4({ navigation }: any) {
     return (
-        <View style={styles.onb}>
-            <Text style={styles.onbText}>모든 준비가 끝났어요!</Text>
-            <Button title="회원가입" onPress={() => navigation.navigate('Signup')} />
-            <View style={{ height: 12 }} />
-            <Button title="로그인" onPress={() => navigation.navigate('Login')} />
-        </View>
+        <SafeAreaView style={styles.onb}>
+            <Image source={require('./img/onb4.png')} style={styles.img} />
+
+            <Text style={styles.onbText}>
+                '도장찍어가유'와 함께{'\n'}시장 탐험을 시작해보세요!
+            </Text>
+
+            {/* 로그인 텍스트, 녹색 '로그인'만 눌림 */}
+            <Text style={styles.loginText}>
+                이미 회원이신가요?{' '}
+                <Text
+                    style={styles.loginLink}
+                    onPress={() => navigation.navigate('Login')}
+                >
+                    로그인
+                </Text>
+            </Text>
+
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('Signup')}
+                activeOpacity={0.8}
+            >
+                <Text style={styles.buttonText}>회원가입</Text>
+            </TouchableOpacity>
+
+        </SafeAreaView>
     );
 }
 
@@ -145,6 +182,7 @@ export default function AppNavigator() {
                 component={(props: any) => (
                     <OnbScreen
                         {...props}
+                        img={require('./img/onb1.png')}
                         text="시장 곳곳의 QR을 스캔하고, 스탬프를 모아보세요!"
                         next="Onb2"
                     />
@@ -155,6 +193,7 @@ export default function AppNavigator() {
                 component={(props: any) => (
                     <OnbScreen
                         {...props}
+                        img={require('./img/onb2.png')}
                         text="적립한 스탬프로 상품권과 쿠폰을 교환해요!"
                         next="Onb3"
                     />
@@ -165,6 +204,7 @@ export default function AppNavigator() {
                 component={(props: any) => (
                     <OnbScreen
                         {...props}
+                        img={require('./img/onb3.png')}
                         text="방문 기록과 시장 트렌드를 한눈에 확인해요!"
                         next="Onb4"
                     />
@@ -191,14 +231,62 @@ export default function AppNavigator() {
     );
 }
 
+const H_PADDING = 24;
+const BUTTON_HEIGHT = 62;
+const IMG_SIZE = 400;
+const BUTTON_BOTTOM = 40;
+
 const styles = StyleSheet.create({
     center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
     title: { fontSize: 24, marginBottom: 16, textAlign: 'center' },
     input: { width: '80%', borderWidth: 1, borderRadius: 8, padding: 10, marginBottom: 12 },
     link: { color: 'blue', marginTop: 12 },
 
-    onb: { flex: 1, backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center', padding: 24 },
-    onbText: { fontSize: 18, textAlign: 'center', marginBottom: 24 },
+    onb: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        paddingHorizontal: H_PADDING,
+    },
+    img: {
+        width: IMG_SIZE,
+        height: IMG_SIZE,
+        marginBottom: 24,
+        resizeMode: 'contain',
+    },
+    onbText: {
+        fontSize: 18,
+        textAlign: 'center',
+        marginBottom: 50,
+        fontWeight: 'bold',
+    },
+    button: {
+        position: 'absolute',
+        bottom: BUTTON_BOTTOM,
+        left: H_PADDING,
+        right: H_PADDING,
+        height: BUTTON_HEIGHT,
+        backgroundColor: '#15D057',
+        borderRadius: 18,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: '600',
+    },
+    loginText: {
+        marginTop: BUTTON_BOTTOM + BUTTON_HEIGHT * 0.1,
+        fontSize: 14,
+        color: '#999',
+        textAlign: 'center',
+    },
+    loginLink: {
+        color: '#00C853',
+        fontWeight: '600',
+    },
 
     tabContainer: {
         flexDirection: 'row',
