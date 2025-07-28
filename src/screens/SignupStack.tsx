@@ -1,8 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Step1 from '../component/signup/Step1';
-import Step2 from '../component/signup/Step2';
-import Step3 from '../component/signup/Step3';
+import Step1 from '../components/signup/Step1';
+import Step2 from '../components/signup/Step2';
+import Step3 from '../components/signup/Step3';
 
 const Stack = createNativeStackNavigator();
 

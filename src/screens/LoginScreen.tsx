@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { loginService } from '../api/LoginService.tsx'
+
+
 
 export default function LoginScreen({ navigation }: { navigation: any }) {
   const [id, setId] = useState('');
@@ -25,7 +28,12 @@ export default function LoginScreen({ navigation }: { navigation: any }) {
       </View>
       <TouchableOpacity
         style={[styles.button, styles.loginButton]}
-        onPress={() => navigation.navigate('SignupStack')}
+        onPress={async () => {
+          const token = await loginService(id, pw);
+          if (token) {
+            navigation.navigate('MainTabs');
+          }
+        }}
       >
         <Text style={styles.loginText}>로그인</Text>
       </TouchableOpacity>

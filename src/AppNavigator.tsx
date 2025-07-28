@@ -10,6 +10,8 @@ import GiftScreen from './screens/GiftScreen.tsx';
 import MapScreen from './screens/MapScreen.tsx';
 import ProfileScreen from './screens/ProfileScreen.tsx';
 import SignupStack from './screens/SignupStack.tsx';
+import HomeListScreen from './components/main/HomeListScreen.tsx';
+import StampMapScreen from './components/stamp/StampMapScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -105,6 +107,10 @@ export default function AppNavigator() {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Signup" component={SignupStack} />
 
+      <Stack.Screen name="HomeListScreen" component={HomeListScreen} options={{ title: '시장 기록' }} />
+
+      <Stack.Screen name="StampMapScreen" component={StampMapScreen} options={{ title: '스탬프 맵' }} />
+
       <Stack.Screen
         name="Onb1"
         component={(props: any) => (
@@ -141,6 +147,8 @@ export default function AppNavigator() {
     </Stack.Navigator>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   center: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
