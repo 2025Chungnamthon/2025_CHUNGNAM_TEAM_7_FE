@@ -75,7 +75,6 @@ function Onb4({ navigation }: any) {
                 '도장찍어가유'와 함께{'\n'}시장 탐험을 시작해보세요!
             </Text>
 
-            {/* 로그인 텍스트, 녹색 '로그인'만 눌림 */}
             <Text style={styles.loginText}>
                 이미 회원이신가요?{' '}
                 <Text
@@ -99,37 +98,46 @@ function Onb4({ navigation }: any) {
 }
 
 export function CustomTabBar({ state, navigation }: BottomTabBarProps) {
-    return (
-        <View style={styles.tabContainer}>
-            {state.routes.map((route: any, idx: number) => {
-                const focused = state.index === idx;
-                const isCenter = route.name === 'QR';
-                const src = Icons[route.name as keyof typeof Icons];
-                if (!src) return null;
+  return (
+    <View style={styles.tabContainer}>
+      {state.routes.map((route, idx) => {
+        const focused = state.index === idx;
+        const isCenter = route.name === 'QR';
+        const src = Icons[route.name as keyof typeof Icons];
+        if (!src) return null;
 
-                return (
-                    <TouchableOpacity
-                        key={route.key}
-                        onPress={() =>
-                            navigation.dispatch(TabActions.jumpTo(route.name))
-                        }
-                        style={[styles.tabButton, isCenter && styles.qrButton]}
-                        activeOpacity={0.7}
-                    >
-                        <Image
-                            source={src}
-                            style={{
-                                width: isCenter ? 32 : 24,
-                                height: isCenter ? 32 : 24,
-                                tintColor: focused ? '#00C853' : 'gray',
-                                resizeMode: 'contain',
-                            }}
-                        />
-                    </TouchableOpacity>
-                );
-            })}
-        </View>
-    );
+        return (
+          <TouchableOpacity
+            key={route.key}
+            onPress={() => navigation.dispatch(TabActions.jumpTo(route.name))}
+            style={[styles.tabButton, isCenter && styles.qrButton]}
+            activeOpacity={0.7}
+          >
+            {isCenter ? (
+              <Image
+                source={
+                  focused
+                    ? require('./img/qr-black.png')
+                    : require('./img/qr.png')
+                }
+                style={styles.qrIcon}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={src}
+                style={[
+                  styles.icon,
+                  { tintColor: focused ? '#00C853' : 'gray' },
+                ]}
+                resizeMode="contain"
+              />
+            )}
+          </TouchableOpacity>
+        );
+      })}
+    </View>
+  );
 }
 
 // 메인 탭 네비게이터
@@ -274,17 +282,23 @@ const styles = StyleSheet.create({
 
     tabContainer: {
         flexDirection: 'row',
-        height: 70,
+        height: 100,
+        borderRadius:18,
         paddingHorizontal: 24,
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: 'transparent',
+        backgroundColor: '#fff',
     },
     tabButton: {
         width: 50,
+        marginBottom:30,
         alignItems: 'center',
         justifyContent: 'center',
     },
+  icon: {
+    width: 24,
+    height: 24,
+  },
     qrButton: {
         width: 60,
         height: 60,
@@ -292,7 +306,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#00C853',
         alignItems: 'center',
         justifyContent: 'center',
-        // 탭바 위로 조금 띄우기
-        marginTop: -20,
+        marginTop: -60,
     },
+  qrIcon: {
+    width: 28,
+    height: 28,
+  },
 });

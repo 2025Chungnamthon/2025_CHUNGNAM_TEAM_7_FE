@@ -11,17 +11,17 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
-import { loginService } from '../api/LoginService';
+// import { loginService } from '../api/LoginService';
 
 export default function LoginScreen({ navigation }: { navigation: any }) {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
-    const token = await loginService(username, password);
-    if (token) navigation.replace('MainTabs');
-  };
+  // const handleLogin = async () => {
+  //   const token = await loginService(username, password);
+  //   if (token) navigation.replace('MainTabs');
+  // };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -80,7 +80,7 @@ export default function LoginScreen({ navigation }: { navigation: any }) {
 
         <TouchableOpacity
           style={[styles.button, styles.loginButton]}
-          onPress={handleLogin}
+          onPress={() => navigation.navigate('MainTabs')} //handleLogin
           activeOpacity={0.8}
         >
           <Text style={styles.buttonText}>로그인</Text>
